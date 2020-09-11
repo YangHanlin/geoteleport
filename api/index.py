@@ -1,5 +1,4 @@
 from flask import Flask, redirect
-from lib import redirection_provider
 
 app = Flask(__name__)
 
