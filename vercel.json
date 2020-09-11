@@ -1,11 +1,6 @@
 {
   "name": "geoteleport",
   "version": 2,
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "api/**"
-    }
-  },
   "routes": [
     {
       "src": "/.*",

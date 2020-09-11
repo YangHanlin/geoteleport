@@ -1,4 +1,5 @@
 from flask import Flask, redirect, request
+import geoip2.database
 
 app = Flask(__name__)
 
@@ -8,4 +9,15 @@ def catch_all(path):
     return redirect(redirect_for(request.headers, path), code=302)
 
 def redirect_for(headers, path):
-    return 'https://ip.sb/ip/{ip}'.format(ip=headers.get('x-forwarded-for'))
+    ip = headers.get('x-forwarded-for')
+    app.logger.info('IP = %s', ip)
+    scheme = 'https'
+    domestic_base = '{scheme}://domestic.pages.tree-diagram.site/{path}'
+    global_base = '{scheme}://global.pages.tree-diagram.site/'
+    with geoip2.database.Reader('../db/Country.mmdb') as reader:
+        response = reader.country(ip)
+        app.logger.info('country or region = %s', response.country.iso_code)
+        if response.country.iso_code == 'CN':
+            return domestic_base.format(scheme=scheme, path=path)
+        else:
+            return global_base.format(scheme=scheme, path=path)
