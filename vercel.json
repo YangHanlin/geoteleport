@@ -2,14 +2,14 @@
   "name": "geoteleport",
   "version": 2,
   "functions": {
-    "bin/index.py": {
+    "api/index.py": {
       "includeFiles": "../db/Country.mmdb"
     }
   },
   "routes": [
     {
       "src": "/.*",
-      "dest": "/bin/index.py"
+      "dest": "/api/index.py"
     }
   ]
 }
