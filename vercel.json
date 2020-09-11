@@ -3,7 +3,7 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "includeFiles": "../db/Country.mmdb"
+      "includeFiles": "api/**"
     }
   },
   "routes": [
