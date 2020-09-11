@@ -3,7 +3,7 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "includeFiles": "@(lib/**)"
+      "includeFiles": "lib/**"
     }
   },
   "routes": [
