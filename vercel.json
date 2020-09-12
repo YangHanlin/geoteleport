@@ -1,9 +1,19 @@
 {
   "name": "geoteleport",
   "version": 2,
+  "env": {
+    "GEOIP_DB_PATH": "/db/Country.mmdb",
+    "CONFIG_PATH": "/config/rules.json"
+  },
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
   "functions": {
     "api/index.py": {
-      "includeFiles": "db/**"
+      "includeFiles": "@(db/**|config/**)"
     }
   },
   "routes": [
@@ -11,5 +21,8 @@
       "src": "/.*",
       "dest": "/api/index.py"
     }
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }
