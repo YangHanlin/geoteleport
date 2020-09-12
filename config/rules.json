@@ -9,7 +9,7 @@
     },
     {
       "name": "global",
-      "redirect": "{scheme}://global.pages.tree-diagram.site/{path}"
+      "redirect": "{scheme}://global-pages.tree-diagram.site/{path}"
     }
   ]
 }
