@@ -19,7 +19,7 @@ Geoteleport uses [MaxMind GeoLite2](https://dev.maxmind.com/geoip/geoip2/geolite
 
 Geoteleport uses rules defined in the configuration file to tell which redirection to send. Below is an [example](config/rules.json):
 
-```json
+```jsonc
 {
   // Rules are defined under the key 'rules'
   "rules": [
