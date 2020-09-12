@@ -24,9 +24,12 @@ def redirect_for(headers, path):
     rules, fallback = config['rules'][:-1], config['rules'][-1]
     with geoip2.database.Reader(base_path + os.getenv('GEOIP_DB_PATH')) as reader:
         region = reader.country(ip).country.iso_code
+    app.logger.info('Accepting visitor %s (%s) with scheme %s', ip, region, scheme)
     for rule in rules:
         if region in rule['regions']:
+            app.logger.info('Matching rule %s', rule['name'])
             return rule['redirect'].format(scheme=scheme, path=path)
+    app.logger.info('Falling back to rule %s', fallback['name'])
     return fallback['redirect'].format(scheme=scheme, path=path)
 
 
