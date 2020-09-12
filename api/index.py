@@ -12,7 +12,7 @@ base_path = str(pathlib.Path(__file__).parent.parent.absolute())
 @app.route('/<path:path>')
 def catch_all(path):
     try:
-        return redirect(redirect_for(request.headers, path), code=302)
+        return redirect(redirect_for(request.headers, path), code=307)
     except RuntimeError as e:
         abort(400, str(e.args))
 
