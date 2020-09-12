@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {
+      "name": "domestic",
+      "regions": [
+        "CN"
+      ],
+      "redirect": "{scheme}://domestic.pages.tree-diagram.site/{path}"
+    },
+    {
+      "name": "global",
+      "redirect": "{scheme}://global.pages.tree-diagram.site/{path}"
+    }
+  ]
+}
