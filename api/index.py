@@ -21,7 +21,7 @@ def redirect_for(headers, path):
     ip = headers.get('x-forwarded-for')
     scheme = headers.get('x-forwarded-proto')
     config = load_config(base_path + os.getenv('CONFIG_PATH'))
-    rules, fallback = config[:-1], config[-1]
+    rules, fallback = config['redirects'][:-1], config['redirects'][-1]
     with geoip2.database.Reader(base_path + os.getenv('GEOIP_DB_PATH')) as reader:
         region = reader.country(ip).country.iso_code
     for rule in rules:
