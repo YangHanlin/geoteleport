@@ -4,7 +4,7 @@ Redirections based on visitor IP locations.
 
 For example, you can use Geoteleport to redirect visitors to their local CDNs to enhance user experience, especially those not coming from the same provider and not interoperating smoothly. Maybe an inferior choice to DNS-based global CDNs, however, it is rather suitable for me who can only afford Cloudflare Free Plan for integration of Cloudflare's global CDN with Aliyun's CDN in mainland China.
 
-Geoteleport uses [MaxMind GeoLite2](https://dev.maxmind.com/geoip/geoip2/geolite2/) database to tell IP locations, and fits the requirements of a [Vercel serverless function](https://vercel.com/docs/serverless-functions/introduction).
+Geoteleport uses [MaxMind GeoLite2](https://dev.maxmind.com/geoip/geoip2/geolite2/) database to tell IP locations, and fits the requirements of a [Vercel serverless function](https://vercel.com/docs/serverless-functions/introduction) (you can directly [import](https://vercel.com/import) this repo after modifying configuration).
 
 ## Configuration
 
@@ -49,4 +49,4 @@ Geoteleport uses rules defined in the configuration file to tell which redirecti
 
 The use and distribution of [MaxMind GeoLite2 database](db/Country.mmdb) is licensed under its [EULA](https://www.maxmind.com/en/geolite2/eula).
 
-All other contents in this repository, unless otherwise noted, is licensed under [MIT](LICENSE).
+All other contents in this repository, unless otherwise noted, are licensed under [MIT](LICENSE).
