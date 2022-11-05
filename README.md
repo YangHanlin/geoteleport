@@ -37,13 +37,13 @@ Geoteleport uses rules defined in the configuration file to tell which redirecti
         "CN"
       ],
       // redirect: required, string, template to construct redirected urls
-      "redirect": "{scheme}://pages.tree-diagram.space/{path}"
+      "redirect": "{scheme}://sites.tree-diagram.space/{path}"
     },
     // The last rule is a fallback rule that matches any request that does not
     // match any of the rules above
     {
       "name": "global",
-      "redirect": "{scheme}://pages.tree-diagram.site/{path}"
+      "redirect": "{scheme}://sites.tree-diagram.site/{path}"
     }
   ]
 }

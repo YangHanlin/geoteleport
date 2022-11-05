@@ -5,11 +5,11 @@
       "regions": [
         "CN"
       ],
-      "redirect": "{scheme}://pages.tree-diagram.space/{path}"
+      "redirect": "{scheme}://sites.tree-diagram.space/{path}"
     },
     {
       "name": "global",
-      "redirect": "{scheme}://pages.tree-diagram.site/{path}"
+      "redirect": "{scheme}://sites.tree-diagram.site/{path}"
     }
   ]
 }
